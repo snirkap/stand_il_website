@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Stand iL - Creativity Without Limits</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            padding: 0;
+            background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* Dark background */
+            color: #fff; /* White text */
+            text-align: center;
+        }
+        .navbar a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 1.2em; /* Larger font size */
+            transition: background-color 0.3s, border-bottom 0.3s, padding-bottom 0.3s; /* Smooth transition for hover effect */
+        }
+        .navbar a:hover {
+            background-color: #028477; /* Darker shade for hover effect */
+            color: #fff; /* Ensuring text color is white on hover */
+            border-radius: 5px; /* Rounded corners on hover */
+            border-bottom: 2px solid white; /* Solid line for underline effect */
+            padding-bottom: 13px; /* Adjust padding to lower the line */
+        }
+        .header {
+            clear: both; /* This clears any floats */
+            text-align: center; /* This centers the content */
+        }
+        .logo {
+            display: inline-block; /* This allows the image to be centered with text-align */
+            margin: 0 auto; /* This also helps in centering if the display block is used */
+            width: 300px; /* Adjust as needed */
+        }
+        .stand-features, .gallery {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border: 3px solid #028477; /* Teal accent border */
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2); /* White shadow for contrast */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto; /* Center the UL on the page */
+            width: 150%; /* Give the UL a fixed width */
+            max-width: 380px; /* Maximum width */
+            text-align: center; /* Center the text of LI */
+        }
+        ul li {
+            display: block; /* Stack the LIs */
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            position: relative; /* For absolute positioning of the pseudo-element */
+            padding-right: 30px; /* Make room for the bullet */
+        }
+        ul li:before {
+            content: '•'; /* Custom bullet point */
+            position: absolute;
+            right: 0; /* Position the bullet at the right edge of the LI */
+            top: 50%; /* Center the bullet vertically */
+            transform: translateY(-50%); /* Shift the bullet up by half its height for perfect centering */
+            color: #4db6ac; /* Teal color for the bullet */
+        }
+        .footer {
+            background-color: #4db6ac; /* Teal accent */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+        .whatsapp-link {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #25D366; /* WhatsApp brand color */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .whatsapp-link:hover {
+            background-color: #128C7E; /* Darker WhatsApp brand color */
+        }
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .gallery img {
+                max-width: 100%;
+            }
+        }
+        .framed-photo {
+            width: 100%;
+            max-width: 300px; /* Adjust the width as needed */
+            margin: 20px auto; /* This centers the image and adds space above and below */
+            border: 3px solid #028477; /* Teal accent border to match the gallery */
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2); /* White shadow for contrast */
+        }
+        .social-media-buttons {
+            text-align: center;
+            margin-top: 20px; /* Adjust as needed */
+        }
+        .social-media-buttons a {
+            display: inline-block;
+            margin: 0 10px; /* Spacing between buttons */
+            background-color: #E1306C; /* Instagram brand color */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .social-media-buttons a.whatsapp-link {
+            background-color: #25D366; /* WhatsApp brand color */
+        }
+        .social-media-buttons a:hover {
+            opacity: 0.8; /* Slight transparency on hover */
+        }
+        .social-media-buttons img {
+            width: 20px; /* Adjust as needed */
+            height: 20px; /* Adjust as needed */
+            vertical-align: middle;
+        }
+        .image-slideshow {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: auto;
+            overflow: hidden; /* Hide overflow for transition */
+            border: 3px solid #028477;
+        }
+        .image-slideshow img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            opacity: 0; /* Start with images transparent */
+            transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+        }
+        .image-slideshow img.active {
+            opacity: 1; /* Make the active image fully visible */
+            position: relative; /* Bring active image to the front */
+        }
+        .customer-shares {
+        text-align: center;
+        margin: 20px 0;
+        }
+        .customer-shares h2 {
+        color: #fff; /* Choose a color that fits your design */
+        margin-bottom: 15px;
+        }
+        .customer-images img {
+        width: 100%;
+        max-width: 300px; /* Adjust as needed */
+        margin: 10px;
+        border: 3px solid #028477; /* Teal border, adjust the color as needed */
+        border-radius: 8px;
+        padding: 5px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .form-container {
+            width: 80%;
+            max-width: 440px;
+            margin: 30px auto;
+            background-color: #028477;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 75%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #028477;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #025c54;
+        }
+        button[type="submit"] {
+        background-color: #0a786d; /* Background color for the button */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+          
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a id="homeButton" style="float: right; cursor: pointer;" onclick="trackButtonClick('Home')">עמוד הבית</a>
+        <a id="galleryButton" style="float: right; cursor: pointer;" onclick="trackButtonClick('Gallery')">גלריה</a>
+        <a id="assemblyButton" style="cursor: pointer;" onclick="trackButtonClick('Assemble')">? איך מרכיבים</a>
+    </div>
+
+    <script>
+        function trackButtonClick(buttonName) {
+            const requestData = { "button_name": buttonName };
+            
+            let targetUrl;
+            // Determine the target URL based on the button clicked
+            switch (buttonName) {
+                case 'Home':
+                    targetUrl = 'stand.iL.html';
+                    break;
+                case 'Gallery':
+                    targetUrl = 'gallery.html';
+                    break;
+                case 'Assemble':
+                    targetUrl = 'assembly.html';
+                    break;
+                default:
+                    targetUrl = 'stand.iL.html'; 
+            }
+            
+            // Redirect to the appropriate HTML page
+            window.location.href = targetUrl;
+            
+            // Send POST request if needed
+            fetch('https://fk38j7ia5d.execute-api.us-east-1.amazonaws.com/dev/metric_lambda', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+    
+    
+    
+    </div>
+    <div class="header">
+        <img src="images/logo.png" alt="Stand iL Logo" class="logo" >
+        <h1>Stand iL - Creativity Without Limits</h1>
+        <div style="padding: 10px; margin-top: 20px;">
+    </div>
+    <div class="content">
+        <h2>סטנד מודולרי לגלשן ולסקייט</h2>
+        <p>הסטנדים שלנו מתאימים לכל סוגי הגלשנים והסקייטים, מבטיחים את הבטיחות והעמידות הדרושים לכם</p>
+        <div class="stand-features" id="features">
+         <ul>
+            <li> הסטנד הכי זול ויעיל בשוק</li>            
+            <li> מתאים לכל סוגי הגלשנים והסקייטים</li>
+            <li> הרכבה עצמית מהירה ופשוטה</li>
+            <li> הסטנד היחיד שמתאים לרצפה ולקיר</li>
+            <li> משלוח עד בית הלקוח </li>
+         </ul>
+            
+            <div style="padding: 10px; margin-top: 20px;">
+                <p style="font-size: 1.5em; color: rgb(255, 255, 255); font-weight: bold;">
+                    עכשיו במחיר השקה<br>
+                    ב-249 שקלים בלבד <br>
+                    ל 10 הקונים הראשונים<br>
+                   !!!נשארו 2 יחידות אחרונות<br>
+                    שלחו הודעה ונדאג לכם 
+
+                </p>
+            </div>
+
+    <div class="image-slideshow">
+        <img id="slideshow" src="images/sunset1.jpg" alt="Slideshow Image">
+    </div>
+
+    <script>
+        var images = ["images/sunset1.jpg", "images/sunset2.jpg", "images/street.jpg", "images/space.jpg", "images/space2.jpg", "images/caver.jpg", "images/wall.jpg", "images/wall2.jpg", "images/wall3.jpg"];
+        var currentIndex = 0;
+
+        function updateSlideshow() {
+            var slides = document.querySelectorAll('.image-slideshow img');
+            slides.forEach(function(slide, index) {
+                slide.classList.remove('active');
+                if (index === currentIndex) {
+                    slide.classList.add('active');
+                }
+            });
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        // Initialize slideshow
+        images.forEach(function(image) {
+            var img = document.createElement('img');
+            img.src = image;
+            document.querySelector('.image-slideshow').appendChild(img);
+        });
+        updateSlideshow();
+
+        setInterval(updateSlideshow, 3000);
+    </script>
+    <div class="customer-shares">
+        <h2>❤ לקוחות משתפים</h2>
+        <div class="customer-images">
+            <img src="images/blue_stand3.jpg" alt="Stand with Hat" />
+            <img src="images/customer2.jpg" alt="Stand with Surfboard" />
+            <img src="images/customer3.jpg" alt="Stand with Hat and Surfboard" />
+        </div>
+    </div>
+        <div class="social-media-buttons">
+            <a href="https://www.instagram.com/stand.il?igsh=MWd5cHB1ZDRyOHYxaw==" target="_blank">
+                <img src="images/Instagram_logo.png" alt="Instagram"> חפשו אותנו באינסטגרם
+            </a>
+            <a href="https://wa.me/message/C2GCZNVYJFE7A1" class="whatsapp-link" target="_blank">
+                <img src="images/whatsapp-white-icon.webp" alt="WhatsApp" style="vertical-align: middle; margin-right: 8px;">שלחו לנו הודעה בווצאפ 
+            </a>
+            <div class="form-container">
+                <h2>השאירו פרטים כאן</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">:שם מלא</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">:מספר טלפון</label>
+                        <input type="text" id="phoneNumber" name="phoneNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">! אני רוצה לשמוע עוד פרטים</button>
+                    </div>
+                </form>
+                <div id="message"></div>
+            </div>
+            
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const contactForm = document.getElementById("contactForm");
+                    const messageDiv = document.getElementById("message");
+            
+                    contactForm.addEventListener("submit", function(event) {
+                        event.preventDefault();
+            
+                        const formData = new FormData(contactForm);
+                        const requestData = {};
+            
+                        formData.forEach((value, key) => {
+                            requestData[key] = value;
+                        });
+            
+                        // Stringify the data and structure it as expected
+                        const requestBody = JSON.stringify({ body: JSON.stringify(requestData) });
+            
+                        fetch('https://fk38j7ia5d.execute-api.us-east-1.amazonaws.com/dev/lambda', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: requestBody,
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('Success:', data);
+                            messageDiv.textContent = '! הפרטים נשלחו בהצלחה';
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            messageDiv.textContent = 'חלה שגיאה, נסו שוב מאוחר יותר ';
+                        });
+                    });
+                });
+            </script>
+
+</body>
+</html>
