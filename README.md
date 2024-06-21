@@ -1,7 +1,7 @@
 # stand_il_website
 ## Here you can see a diagram explaining the project:
 <div align="center">
-	<img src="https://github.com/snirkap/stand_il_website/assets/120733215/1b9d7d2d-764e-45ab-9794-0c4464ffdda6">
+	<img src="https://github.com/snirkap/stand_il_website/assets/120733215/9da967b0-4ef3-4312-a834-ec4cac0c9350">
 </div>
 
 
