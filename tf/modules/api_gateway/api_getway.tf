@@ -103,7 +103,7 @@ resource "aws_api_gateway_integration" "metric_lambda" {
   http_method             = aws_api_gateway_method.metric_lambda.http_method
   integration_http_method = "POST"
   type                    = "AWS"
-  uri                     = "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/${var.button_click_lambda_invoke_arn}/invocations"
+  uri                     = var.button_click_lambda_invoke_arn
 }
 
 resource "aws_api_gateway_method_response" "metric_lambda" {

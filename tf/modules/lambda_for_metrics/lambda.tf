@@ -1,7 +1,7 @@
 data "archive_file" "lambda_metric" {
     type = "zip"
     source_file = "${path.module}/../src/metricClick.py"
-    output_path = "${path.module}/metricClick.zip"
+    output_path = "metricClick.zip"
 }
 
 resource "aws_lambda_function" "button_click_lambda" {
