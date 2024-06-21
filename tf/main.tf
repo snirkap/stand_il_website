@@ -31,7 +31,7 @@ module "api_gateway" {
   source = "./modules/api_gateway"
   client_info_lambda_invoke_arn = module.lambda_client_info.client_info_lambda_invoke_arn
   client_info_lambda_function_name = module.lambda_client_info.client_info_lambda_function_name
-  button_click_lambda_invoke_arn = "arn:aws:lambda:us-east-1:064195113262:function:ButtonClickLambda"
+  button_click_lambda_invoke_arn = module.lambda_for_metrics.button_click_lambda_invoke_arn
   iam_for_lambda_name = module.lambda_client_info.iam_for_lambda_name
   client_info_lambda_arn = module.lambda_client_info.client_info_lambda_arn
 }

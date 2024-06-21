@@ -35,6 +35,9 @@ Welcome to the repository for the stand.iL website and its RESTful API gateway. 
 9. **Amazon CloudWatch**:
    - CloudWatch is used for monitoring and logging various metrics related to the system's behavior. Metrics are recorded for button clicks, providing insights into user interaction with the website. Additionally, a dashboard is created in CloudWatch to visualize and analyze these metrics over time.
 
+10. **SNS**:
+   - SNS (Simple Notification Service) is used to notified me by email every time the user leaves his details.
+
 ### Prerequisites:
 * AWS Account with access to API Gateway, Lambda Functions, S3, and Amazon CloudWatch
 * Terraform installed on your local machine
